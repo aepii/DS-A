@@ -6,10 +6,17 @@ class Queue:
         self.items.append(item)
 
     def dequeue(self):
-        return self.items.pop(0)
+        if not self.is_empty():
+            return self.items.pop(0)
+        else:
+            raise IndexError("Stack is empty.")
+
     
     def peek(self):
-        return self.items[0]
+        if not self.is_empty():
+            return self.items[0]
+        else:
+            raise IndexError("Stack is empty.")
     
     def is_empty(self):
         return len(self.items) == 0
