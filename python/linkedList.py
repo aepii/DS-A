@@ -92,3 +92,9 @@ class LinkedList:
 
     def size(self):
         return self.length
+    
+    def traverse(self):
+        curr = self.head.next
+        while curr:
+            print(curr.value)
+            curr = curr.next

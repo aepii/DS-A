@@ -9,7 +9,16 @@ class BST:
         self.root = None
     
     def insert(self, value):
-        if self.root is None:
-            self.root = BinaryNode(value)
-        else:
-            
+        self._recursive_insert(self.root, value)
+
+    def _recursive_insert(self, node, value):
+        if node is None:
+            node = BinaryNode(value)
+            return
+        elif value > node.value:
+            self._recursive_insert(node.right, value)
+        elif value < node.value:
+            self._recursive_insert(node.left, value)
+
+    def search(self, value):
+        pass
