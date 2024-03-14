@@ -11,7 +11,6 @@ class Queue:
         else:
             raise IndexError("Stack is empty.")
 
-    
     def peek(self):
         if not self.is_empty():
             return self.items[0]
