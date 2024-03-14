@@ -48,7 +48,22 @@ class LinkedList:
                 prev = curr
                 curr = curr.next
 
-    def delete(self)
+    def delete(self, value):
+        if self.head == self.tail:
+            raise ValueError("The list is empty.")
+        else:
+            prev = self.head
+            curr = self.head.next
+            while curr:
+                if curr.value == value:
+                    prev.next = curr.next
+                    if curr == self.tail:
+                        self.tail = prev
+                    break
+                prev = curr
+                curr = curr.next
+
+        raise ValueError("Value not found.")
 
     def search(self, value):
         if self.head == self.tail:
